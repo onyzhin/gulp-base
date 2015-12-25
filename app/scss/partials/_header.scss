@@ -1,0 +1,22 @@
+.header{
+	&-menu{
+		ul{
+			display: table;
+			width: 100%;
+			li{
+				display: table-cell;
+				vertical-align: middle;
+				text-align: center;
+				a{
+					text-decoration: none;
+				}
+				&:first-child{
+					text-align: left;
+				}
+				&:last-child{
+					text-align: right;
+				}
+			}
+		}
+	}
+}

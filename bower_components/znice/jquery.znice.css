@@ -1,0 +1,379 @@
+/*zNice base styles DONT TOUCH IF YOU DONT KNOW WHAT IS THIS!!!!!*/
+.zNice-wrap {
+	display: inline-block;
+	position: relative;
+}
+.zNice-disabled {
+	opacity: 0.5;
+}
+.zNice-qInput .zNice-tInput {
+	position: relative;
+}
+.zNice-bg {
+	position: absolute;
+	left: 0;
+	top: 0;
+	bottom: 0;
+	right: 0;
+}
+.zNice-color {
+	position: absolute;
+	display: block;
+	right: 30px;
+	top: 5px;
+	bottom: 5px;
+	width: 30px;
+}
+.zNice-image {
+	position: absolute;
+	display: block;
+	right: 30px;
+	top: 0px;
+	bottom: 0px;
+}
+.zNice-image img {
+	vertical-align: middle;
+}
+.zNice-error-text {
+	position: absolute;
+	left: 100%;
+	top: 3px;
+	color: red;
+	margin: 0 0 0 5px;
+	white-space: nowrap;
+}
+.zNice-tArea textarea, .zNice-tInput input {
+	position: relative;
+	z-index: 1;
+	vertical-align: bottom;
+	border: 0;
+	overflow: auto;
+	outline: none !important;
+	width: 100%;
+	font-size: 12px;
+	font-family: sans-serif;
+	background: url('../images/spacer.gif');
+}
+.zNice-select {
+	cursor: pointer;
+}
+.zNice-expanded {
+	z-index: 7;
+}
+.zNice-expanded .zNice-select-list {
+	display: block;
+}
+.zNice-select-text {
+	display: block;
+	white-space: nowrap;
+	position: relative;
+}
+.zNice-select-open {
+	display: block;
+	position: absolute;
+	right: 0;
+	top: 0;
+}
+.zNice-select-list {
+	position: absolute;
+	left: 0px;
+	top: 100%;
+	list-style: none;
+	display: none;
+	margin: 0;
+	overflow-y: auto;
+	min-width: 100%;
+	white-space: nowrap;
+}
+.zNice-select-list li {
+	display: block;
+	position: relative;
+}
+.zNice-select-item {
+	display: block;
+	position: relative;
+}
+.zNice-checkbox input, .zNice-radio input, .zNice-select select {
+	position: absolute;
+	left: -99999em;
+	border: none;
+	margin: 0;
+	padding: 0;
+}
+
+/* -------------
+ * placeholder
+ * ------------- */
+::-webkit-input-placeholder {
+	color: #212121;
+}
+:-moz-placeholder {
+	color: #212121;
+}
+::-moz-placeholder {
+	color: #212121;
+}
+:-ms-input-placeholder {
+	color: #212121;
+}
+
+/* END zNice base styles DONT TOUCH IF YOU DONT KNOW WHAT IS THIS!!!!!*/
+
+/* -------------
+ * TeaxArea
+ * ------------- */
+.zNice-tArea {
+	display: block;
+}
+.zNice-tArea textarea {
+	padding: 20px;
+	max-width: 100%;
+}
+.zNice-tArea .zNice-bg {
+	background: #fff;
+	border: 1px solid #ccc;
+}
+
+/* -------------
+ * Text Inputs
+ * ------------- */
+
+/*Default input*/
+.zNice-tInput {
+	display: block;
+}
+.zNice-tInput input {
+	padding: 5px;
+	height: 28px;
+}
+.zNice-tInput .zNice-bg {
+	background: #fff;
+	border: 1px solid #ccc;
+}
+
+/*Icon input*/
+.zNice-tInput-image {
+
+}
+.zNice-tInput-image input {
+	padding-left: 35px
+}
+.zNice-tInput-image .zNice-image {
+	position: absolute;
+	left: 10px;
+	right: auto;
+}
+
+/*Color input*/
+.zNice-tInput-color {
+
+}
+.zNice-tInput-color input {
+	padding-left: 35px
+}
+.zNice-tInput-color .zNice-color {
+	position: absolute;
+	left: 10px;
+	right: auto;
+	width: 20px;
+}
+
+/*Quant input*/
+.zNice-qInput {
+	display: inline-block;
+}
+.zNice-qInput .zNice-tInput {
+	display: inline-block;
+	vertical-align: middle;
+}
+.zNice-qInput input {
+	text-align: center;
+}
+.zNice-qInput-control {
+	height: 20px;
+	width: 20px;
+	display: inline-block;
+	vertical-align: middle;
+	background: url('../images/zNice-qInput.png') left top no-repeat;
+	cursor: pointer;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-khtml-user-select: none;
+}
+.zNice-qInput-inc:hover {
+	background-position: left bottom;
+}
+.zNice-qInput-dec {
+	background-position: right top;
+}
+.zNice-qInput-dec:hover {
+	background-position: right bottom;
+}
+
+/* -------------
+ * Selects Inputs
+ * ------------- */
+
+/*Default Select*/
+.zNice-select {
+	display: block;
+	height: 28px;
+	line-height: 28px;
+	font-size: 12px;
+}
+.zNice-select .zNice-bg {
+	background: #fff;
+	border: 1px solid #ccc;
+}
+.zNice-select-text {
+	overflow: hidden;
+	position: relative;
+}
+.zNice-select-open {
+	right: 4px;
+	top: 4px;
+	width: 20px;
+	height: 20px;
+	background: url('../images/zNice-select-open.png') no-repeat left top;
+}
+.zNice-select:hover .zNice-select-open, .zNice-expanded .zNice-select-open {
+	background-position: right bottom;
+}
+.zNice-select-list {
+	border-bottom: 1px solid #ccc;
+	background-color: #fff;
+	max-height: 172px;
+}
+.zNice-select-list li {
+	border-width: 0 1px 1px;
+	border-style: solid;
+	border-color: #ccc;
+}
+.zNice-select-list li:last-child {
+	border-bottom: 0;
+}
+.zNice-select-list li.zNice-selected>.zNice-select-item, .zNice-select-list li:hover>.zNice-select-item {
+	background: #1794c6;
+	color: #fff;
+}
+.zNice-select-list li .zNice-select-item {
+	margin: 0 -1px;
+}
+.zNice-select-item, .multipleText {
+	padding: 0 25px 0 10px;
+}
+.zNice-select-image .zNice-image {
+	width: 30px;
+	text-align: center;
+}
+
+/* -------------
+* Checkboxes
+* ------------- */
+.zNice-checkbox {
+	display: inline-block;
+	z-index: 2;
+	width: 18px;
+	height: 18px;
+	vertical-align: middle;
+	cursor: pointer;
+}
+.zNice-checkbox .zNice-bg {
+	background: transparent url('../images/zNice-checkbox.png') no-repeat left top;
+	border: 1px solid #ccc;
+}
+.zNice-checkbox:hover .zNice-bg {
+	background-position: right top;
+	border-color: #f78383;
+}
+
+/* -------------
+* Radio
+* ------------- */
+.zNice-radio {
+	display: inline-block;
+	z-index: 2;
+	width: 18px;
+	height: 18px;
+	vertical-align: middle;
+	cursor: pointer;
+}
+.zNice-radio .zNice-bg {
+	background: transparent url('../images/zNice-radio.png') no-repeat left top;
+	border: 1px solid #ccc;
+}
+.zNice-radio:hover .zNice-bg {
+	background-position: right top;
+	border-color: #f78383;
+}
+.zNice-checked .zNice-bg {
+	background-position: left bottom;
+}
+.zNice-checked:hover .zNice-bg {
+	background-position: right bottom;
+	border-color: #f78383;
+}
+
+/*Validation*/
+
+/*TeaxArea*/
+.zNice-tArea.zNice-focus .zNice-bg {
+	border-color: yellow;
+}
+.zNice-tArea.zNice-error .zNice-bg {
+	border-color: red;
+}
+.zNice-tArea.zNice-valid .zNice-bg {
+	border-color: green;
+}
+
+/*Default input*/
+.zNice-tInput.zNice-focus .zNice-bg {
+	border-color: yellow;
+}
+.zNice-tInput.zNice-error .zNice-bg {
+	border-color: red;
+}
+.zNice-tInput.zNice-valid .zNice-bg {
+	border-color: green;
+}
+
+/*Quant input*/
+.zNice-qInput.zNice-focus .zNice-bg {
+	border-color: yellow;
+}
+.zNice-qInput.zNice-error .zNice-bg {
+	border-color: red;
+}
+.zNice-qInput.zNice-valid .zNice-bg {
+	border-color: green;
+}
+
+/*Checkboxes*/
+.zNice-checkbox.zNice-focus .zNice-bg {
+	border-color: yellow;
+}
+.zNice-checkbox.zNice-error .zNice-bg {
+	border-color: red;
+}
+.zNice-checkbox.zNice-valid .zNice-bg {
+	border-color: green;
+}
+
+/*Radios*/
+.zNice-radio.zNice-focus .zNice-bg {
+	border-color: yellow;
+}
+.zNice-radio.zNice-error .zNice-bg {
+	border-color: red;
+}
+.zNice-radio.zNice-valid .zNice-bg {
+	border-color: green;
+}
+
+/*END Validation*
+
+/* -------------
+* File upload input
+*  .zNiceInputWrapper.fileupload padding-right must be bigger as .ubutton width
+* ------------- */

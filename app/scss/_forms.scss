@@ -1,0 +1,25 @@
+%input{	
+	display: block;
+	width: 100%;
+	outline: none;
+	border: 1px solid #eaeaea;
+	background: #f7f7f7;
+	box-shadow: none;
+	outline: none;
+	font-family: $fontFamily;
+}
+
+.form{
+	position: relative;
+	padding: 10px 15px;
+	&-field{
+		margin-bottom: 15px; 
+		label{
+			font-size: 15px;
+			color: rgb(255, 255, 255);
+			display: block;
+			margin-bottom: 15px;
+		}
+		@extend %last;
+	}
+}

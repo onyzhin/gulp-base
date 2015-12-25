@@ -1,0 +1,65 @@
+
+%heading {font-weight:normal;margin-bottom:1em;color:$ctextColor;}
+
+a{
+	@extend %link;
+	border:0;
+
+	&:hover{color:$baseColorHover;text-decoration: none;}
+}
+
+.mainheading,.ctext h1,h1{
+	@extend %heading;
+	font-size: 30px;
+	margin-bottom: 25px;
+}
+.subheading,.ctext h2,h2{
+	@extend %heading;
+	font-size: 25px;
+}
+.thirdheading,.ctext h3,h3{
+	@extend %heading;
+	font-size: 22px;
+}
+.fourheading,.ctext h4,h4{
+	@extend %heading;
+	font-size: 18px;
+}
+.fiveheading,.ctext h5,h5{
+	@extend %heading;
+	font-size: 16px;
+}
+
+.ctext {
+	p {
+		margin:0 0 15px 0;
+		line-height: 16px;
+		font-size: 14px;
+
+		&:last-child{margin-bottom:0;}
+	}
+
+	ul{margin:0em 0 1.8em 0px;
+		&:last-child{margin-bottom:0;}
+		li{
+			position:relative;
+			line-height: 1.80em;
+			font-size:0.875em;
+			letter-spacing: 0.0179em;
+			margin: 0 0 1.8em 15px;
+			&:before{content:'—';position:absolute;left:-15px; top:0; color:$ctextColor;}
+		}
+	}
+	blockquote{
+		position: relative;
+		text-transform: uppercase;
+		margin: 0 0 1.5em 0;
+		padding-left:2.2em;
+		font-size: 1.2em;
+		line-height: 1.6em;
+		letter-spacing: 0.1111em;
+		&:after{content:'';position:absolute;left:0;top:9px;bottom:9px;width:4px;background-color:#edf2f5;}
+	}
+	table{border-collapse:collapse;}
+	table td{border:1px solid;}
+}

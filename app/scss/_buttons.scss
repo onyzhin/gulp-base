@@ -1,0 +1,38 @@
+/*buttons*/
+.button {
+	min-width: 150px;
+	height: 45px;
+	line-height: 45px;
+	padding: 0 15px;
+	display: inline-block;
+	vertical-align: top;
+	position: relative;
+	text-decoration: none;
+	text-align: center;
+	color: #fff;
+	font-family: $fontFamily;
+	font-size: 16px;
+	background: #608DD0;
+	border: 0px solid #608DD0;
+	outline: none;
+	z-index: 2;
+
+	&:hover{
+		background: #426AA7;
+		color: #fff;
+	}
+	&.btn-outline{ 
+		border: 1px solid #426AA7;
+		background: transparent;
+		color: #426AA7;
+
+		&:hover{
+			color: #fff;
+			border: 1px solid #426AA7;
+			background: #426AA7;
+		}
+	}
+}
+button{
+	@extend .button;
+}

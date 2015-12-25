@@ -1,0 +1,26 @@
+@mixin icons($background, $width, $height) {
+	background: url('../images/#{$background}.png') no-repeat left top;
+	width: $width; 
+	height: $height;
+}
+
+.icon {
+	@extend %inline-middle;
+	
+}
+
+ @mixin socIcon($bg){
+ 	background-position: $bg;
+ }
+
+ .social-icon {
+ 	background-image: url('../images/social-icon.png');
+ 	background-repeat: no-repeat;
+	
+ 	&_fb {
+ 		@include socIcon(0 0);
+ 	}
+ 	&_vk {
+		@include socIcon(-15px 0);
+	}
+ }

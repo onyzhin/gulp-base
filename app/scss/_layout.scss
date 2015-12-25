@@ -1,0 +1,36 @@
+
+body *{
+	-moz-box-sizing: border-box; 
+    box-sizing: border-box;
+}
+
+.container {
+	margin: 0 auto;
+	position: relative;
+	z-index: 1;
+	@extend %clear;
+}
+
+.main {
+	.sidebar {
+		width: 180px;
+		float: left;
+	}
+	.content {
+		float: left;
+		width: 780px;
+	}
+}
+
+.footer {
+	position:absolute;
+	bottom:0;
+	left:0;
+	width:100%;
+	z-index:2;
+	overflow:hidden;
+	
+	&_placeholder{
+		height: 0;
+	}
+}

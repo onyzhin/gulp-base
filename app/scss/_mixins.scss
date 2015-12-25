@@ -1,0 +1,161 @@
+@function pxtopercent($target, $parent: 16) {
+  @return percentage($target / $parent);
+} 
+@function px($sizePx, $size100:16) {
+	@if not unitless($sizePx) {
+	  $sizePx: strip-units($sizePx);
+	}
+	@if not unitless($size100) {
+	  $size100: strip-units($size100);
+	}
+	@return ($sizePx / $size100) * 1em; 
+}
+@mixin transition($delay:200, $property:all , $function:linear) {
+	-webkit-transition: $property #{$delay}ms $function;
+	-moz-transition: $property #{$delay}ms $function;
+	-ms-transition: $property #{$delay}ms $function;
+	-o-transition: $property #{$delay}ms $function;
+	transition: $property #{$delay}ms $function;
+}
+@mixin transform($transforms) {
+	   -moz-transform: $transforms;
+	     -o-transform: $transforms;
+	    -ms-transform: $transforms;
+	-webkit-transform: $transforms;
+          transform: $transforms;
+}
+@mixin translate ($x, $y) {
+   @include transform(translate($x, $y));
+}
+@mixin rotate( $degrees ) {
+  -webkit-transform: rotate(#{$degrees}deg);
+  -moz-transform: rotate(#{$degrees}deg);
+  -ms-transform: rotate(#{$degrees}deg);
+  -o-transform: rotate(#{$degrees}deg);
+  transform: rotate(#{$degrees}deg);
+  filter:  progid:DXImageTransform.Microsoft.Matrix(sizingMethod='auto expand', M11=#{cos($degrees)}, M12=-#{sin($degrees)}, M21=#{sin($degrees)}, M22=#{cos($degrees)});
+  -ms-filter: "progid:DXImageTransform.Microsoft.Matrix(sizingMethod='auto expand', M11=#{cos($degrees)}, M12=-#{sin($degrees)}, M21=#{sin($degrees)}, M22=#{cos($degrees)})";
+  zoom: 1;
+}
+@mixin box-shadow($top, $left, $blur, $color, $inset: false) {
+	@if $inset {
+		-webkit-box-shadow:inset $left $top $blur $color;
+		-moz-box-shadow:inset $left $top $blur $color;
+		box-shadow:inset $left $top $blur $color;
+	} @else {
+		-webkit-box-shadow: $left $top $blur $color;
+		-moz-box-shadow: $left $top $blur $color;
+		box-shadow: $left $top $blur $color;
+	}
+}
+@mixin placeholder($color) {
+	::-webkit-input-placeholder {color:$color;}
+	:-moz-placeholder {color:$color;}
+	::-moz-placeholder {color:$color;}
+	:-ms-input-placeholder {color:$color;}
+}
+@mixin border-radius($radius) {
+	-webkit-border-radius: $radius;
+	-moz-border-radius: $radius;
+	-ms-border-radius: $radius;
+	border-radius: $radius;
+}
+@mixin border-radius-all( $top, $left, $botom, $right) {
+	-webkit-border-radius: $top $left $botom $right;
+	-moz-border-radius: $top $left $botom $right;
+	-ms-border-radius: $top $left $botom $right;
+	border-radius: $top $left $botom $right;
+}
+@mixin vertical-gradient($start-colour, $end-colour) { 
+    background-color: $start-colour;
+    background-image: -webkit-gradient(linear, left top, left bottom, from($start-colour), to($end-colour));
+    background-image: -webkit-linear-gradient(top, $start-colour, $end-colour);
+    background-image:    -moz-linear-gradient(top, $start-colour, $end-colour);
+    background-image:     -ms-linear-gradient(top, $start-colour, $end-colour);
+    background-image:      -o-linear-gradient(top, $start-colour, $end-colour);
+    background-image:         linear-gradient(top, $start-colour, $end-colour);
+    filter:            progid:DXImageTransform.Microsoft.gradient(start-colourStr='#{$start-colour}', end-colourStr='#{$end-colour}');
+}
+@mixin horizontal-gradient($from, $to, $stop: 100%) {
+  background-color: $from;
+  background-image: -moz-linear-gradient(left, $from 0%, $to $stop);
+  background-image: -webkit-gradient(linear, left top, right top, color-stop(0%, $from), color-stop($stop, $to));
+  background-image: -webkit-linear-gradient(left, $from 0%, $to $stop);
+  background-image: -o-linear-gradient(left, $from 0%, $to $stop);
+  background: -ms-linear-gradient(left, $from 0%, $to $stop);
+  background: linear-gradient(to right, $from 0%, $to $stop);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='$from', endColorstr='$to',GradientType=1 );
+}
+@mixin background($image){
+	background-image: url(../images/#{$image});
+	background-position: center center;
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+
+%defaultMargin {
+	margin-bottom: 50px;
+}
+
+%inline-middle {
+	display: inline-block;
+	vertical-align: middle;
+}
+
+%borderBox {
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+%last {
+	&:last-child {margin-bottom:0;}
+}
+
+%link {
+	color: $baseColor;
+	&:hover {color: $baseColorHover; text-decoration: none;}
+}
+
+%cfix:after,
+%clear:after {
+	content: '';
+	clear:both;
+	font-size:1px;
+	line-height:1px;
+	height:0;
+	overflow:hidden;
+	display: block;
+}
+
+%unselectable {
+	-moz-user-select: -moz-none;
+	-o-user-select: none;
+	-khtml-user-select: none;
+	-webkit-user-select: none;
+	user-select: none;
+}
+
+%table{
+	display:table;
+	width:100%;
+}
+%table-row{
+	display:table-row;
+	width:100%;
+}
+%table-cell{
+	display:table-cell;
+	vertical-align:middle;
+}
+%inline-middle{
+	display:inline-block;
+	vertical-align:middle;
+}
+%full{
+	position:absolute;
+	top:0;
+	left:0;
+	right:0; 
+	bottom:0;  
+	margin: auto;
+}
