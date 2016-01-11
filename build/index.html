@@ -97,6 +97,33 @@
 
 	</div>
 </div>
+	<div class="container">
+		<div class="form zNice">
+	<form onsubmit='return false' autocomplete="off"  method="get">
+		<legend>Form title</legend>
+		<div class="form-field" name="name" />
+			<label>Name</label>
+			<input type="text" name="name" placeholder="Name" />
+		</div>
+		<div class="form-field">
+			<label>email</label>
+			<input type="email" name="mail" placeholder="E-mail" />
+		</div>
+		<div class="form-field">
+			<label>Select</label>
+			<select name="type">
+				<option value="1">1</option>
+				<option value="2">2</option>
+			</select>
+		</div>
+		<button type="submit" class="button">Send</button>
+		<input type="hidden" name="form_name" value="Заявка"/>
+		<input type="hidden" name="action_type" value='form_feedback'/>
+		<input type="hidden" name="action" value='send_form'/>
+	</form>
+</div>
+
+	</div>
 </div>
     <div class="footer_placeholder"></div>
     <footer class="footer">

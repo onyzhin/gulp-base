@@ -36,11 +36,13 @@
 }
 .zNice-error-text {
 	position: absolute;
-	left: 100%;
-	top: 3px;
+	right: 6px;
+	top: 2px;
+	font-size: 10px !important;
 	color: red;
 	margin: 0 0 0 5px;
 	white-space: nowrap;
+	visibility: hidden;
 }
 .zNice-tArea textarea, .zNice-tInput input {
 	position: relative;

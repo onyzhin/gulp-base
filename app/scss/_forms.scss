@@ -11,12 +11,13 @@
 
 .form{
 	position: relative;
-	padding: 10px 15px;
+	legend{
+		@extend .subheading;
+	}
 	&-field{
 		margin-bottom: 15px; 
 		label{
-			font-size: 15px;
-			color: rgb(255, 255, 255);
+			font-size: $bodyFontSize; 
 			display: block;
 			margin-bottom: 15px;
 		}
