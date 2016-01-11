@@ -1,6 +1,7 @@
 @media (min-width: $container) {
 	.container {
 		width: $container;
+		padding: 0 0;
 	}
 }
 @media (min-width:768px){ 
@@ -15,6 +16,20 @@
 	}
 }
 @media (max-width:768px){ 
+	.header{
+		&-menu {
+			ul{
+				display: block;
+				li{
+					display: block; 
+					&:first-child, 
+					&:last-child{
+						text-align: center;
+					}
+				}
+			}
+		}
+	}
 	
 }
 

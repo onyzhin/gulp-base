@@ -1,14 +1,11 @@
-/* modernize */
 function modernize() {
-	// placeholder 
 	if(!Modernizr.input.placeholder){
 		$('[placeholder]').each(function() {
 			$(this).watermark($(this).attr('placeholder'));
 		});
-	}
+	} 
 }
 
-/* scrollUp */
 function scrollUp(block,targetBlock) {
 	$(block).click(function(e){
 		var target = $(targetBlock).offset().top;
@@ -110,6 +107,73 @@ function footerplaceholder(){
 		.outerHeight());
 }
 
+function tabs(block){
+	if (typeof(block)==='undefined') block=$('.tabs');
+	block.each(function(){
+		var $wrap=$(this);
+		if (!$wrap.is('.tabs-done')){
+			$wrap.addClass('tabs-done');
+			$('[data-tabId]',$wrap).click(function(event){
+				event.preventDefault();
+				//coneole.log(3);
+				var tabid=$(this).data('tabid');
+				$('[data-tabId]',$wrap).removeClass('active');
+				$('[data-tabId="'+tabid+'"]',$wrap).addClass('active');
+				$('[data-tab]',$wrap).removeClass('active').addClass('hidden');
+				$('[data-tab="'+tabid+'"]',$wrap).addClass('active').removeClass('hidden');
+			})
+			if ($('.active[data-tabId]',$wrap).length>0)
+				$('.active[data-tabId]',$wrap).click();
+			else
+				$('[data-tabId]:eq(0)',$wrap).click();
+		}
+	})
+}
+
+function sendForm(){
+	$('form [type="submit"]').click(function(){
+
+ 		var parentClass=$(this).attr('rel');
+	 	var paramsFancy={
+		    'scrolling':0,
+		    'autoScale': true,
+		    'transitionIn': 'elastic',
+		    'transitionOut': 'elastic',
+		    'speedIn': 500,
+		    'speedOut': 300,
+		    'autoDimensions': true,
+		    'centerOnScroll': true,
+		    'href' : '#thanks',
+		    'padding' : '0',
+		    'height' : 'auto',
+		    helpers: {
+	            overlay: {
+	              locked: false
+	            }
+	        }
+	    };
+
+	   form =  $(this).closest('form');
+
+	    if(form.valid()){
+	        $.ajax({
+	            url: 'form_work.php',
+	            data: 'action=send_form&'+form.serialize(),
+	            success: function(data){
+	                $.fancybox.close();
+	                $.fancybox.open(paramsFancy);
+	                $('form input[type="text"]').val('');
+                  	$('form input[type="text"]').blur();
+                  	$('.zNice-tInput').removeClass('zNice-error zNice-valid');
+	            }
+	        });
+	        
+	    }else{
+
+	    } 
+	}); 
+}
+
 $(document).ready(function(){
 	console.log('It is common.js'); 
 	modernize();
@@ -117,6 +181,7 @@ $(document).ready(function(){
 	slickInit();
 	fancybox();
 	footerplaceholder();
+	tabs();
 });
 
 $(window).resize(function(){

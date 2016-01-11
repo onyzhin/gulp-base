@@ -1,5 +1,9 @@
 
-%heading {font-weight:normal;margin-bottom:1em;color:$ctextColor;}
+%heading {
+	font-weight : normal;
+	margin-bottom : 1em;
+	color : $ctextColor;
+} 
 
 a{
 	@extend %link;
@@ -33,8 +37,8 @@ a{
 .ctext {
 	p {
 		margin:0 0 15px 0;
-		line-height: 16px;
-		font-size: 14px;
+		line-height: 16px; 
+		font-size: $bodyFontSize; 
 
 		&:last-child{margin-bottom:0;}
 	}
@@ -62,4 +66,8 @@ a{
 	}
 	table{border-collapse:collapse;}
 	table td{border:1px solid;}
+
+	.button{
+		margin-bottom: 5px;
+	}
 }

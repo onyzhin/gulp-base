@@ -1,9 +1,15 @@
 $fontFamily:  arial, sans-serif;
-$baseColor : #000; // base site text color, links
-$baseColorHover : #000; //link hover
+$baseColor : #000; 
+$baseColorHover : #000; 
 $ctextColor : #242424; 
 $titleSize : 1.2em;
 $bodyBackground : #fff;
 $bodyFontSize : 14px;
 $container : 960px;
 $minContainer : 320px;
+
+/*buttons*/
+$buttonHeight: 40px;
+$buttonColor : rgb(138, 0, 78);
+$buttonColorHover : #a4025e;
+$buttonText : #fff;

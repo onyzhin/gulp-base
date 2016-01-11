@@ -42,7 +42,7 @@ var path = {
         style: 'app/scss/**/*.scss',
         img: 'app/images/**/*.*',
         fonts: 'app/fonts/**/*.*',        
-        bower: 'app/bower_components/**/*.*'
+        bower: 'app/bower_components/**/*.*' 
     },
     clean: './build',
 };
@@ -83,7 +83,6 @@ gulp.task('html:build', function () {
 gulp.task('js:build', function () {
     gulp.src(path.src.js) 
         .pipe(sourcemaps.init()) 
-        //.pipe(concat('all.js'))
         .pipe(uglify()) 
         .pipe(sourcemaps.write())  
         .pipe(gulp.dest(path.build.js))
@@ -147,4 +146,4 @@ gulp.task('watch', function(){
 });
 
 
-gulp.task('default', ['build','webserver', 'watch']);
+gulp.task('default', ['build','webserver', 'watch']); 

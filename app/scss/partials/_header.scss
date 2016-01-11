@@ -1,5 +1,9 @@
 .header{
-	&-menu{
+	&-menu{   
+		position: relative;
+		z-index: 2;
+		background: #D0D0D0;
+		margin-bottom: 20px;
 		ul{
 			display: table;
 			width: 100%;
@@ -7,8 +11,13 @@
 				display: table-cell;
 				vertical-align: middle;
 				text-align: center;
+				height: 30px;
 				a{
 					text-decoration: none;
+				}
+				&.active,
+				& a:hover{ 
+					text-decoration: underline;
 				}
 				&:first-child{
 					text-align: left;

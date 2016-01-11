@@ -1,38 +1,82 @@
-/*buttons*/
 .button {
-	min-width: 150px;
-	height: 45px;
-	line-height: 45px;
+	@extend %inline-middle;
+	min-width: 100px;
+	height: $buttonHeight;
+	line-height: $buttonHeight;
 	padding: 0 15px;
-	display: inline-block;
-	vertical-align: top;
 	position: relative;
 	text-decoration: none;
 	text-align: center;
-	color: #fff;
+	text-transform: uppercase;
+	color: $buttonText;
 	font-family: $fontFamily;
 	font-size: 16px;
-	background: #608DD0;
-	border: 0px solid #608DD0;
+	font-weight: bold;
+	background-color: $buttonColor;
+  	box-shadow: inset 0px 0px 0px 0px $buttonColorHover;
+	border: 0px solid $buttonColor;
+	border-radius: 5px;
 	outline: none;
 	z-index: 2;
 
 	&:hover{
-		background: #426AA7;
-		color: #fff;
+		background: $buttonColorHover;
+		color: $buttonText;
 	}
 	&.btn-outline{ 
-		border: 1px solid #426AA7;
+		border: 1px solid $buttonColorHover;
 		background: transparent;
-		color: #426AA7;
+		color: $buttonColorHover;
 
 		&:hover{
-			color: #fff;
-			border: 1px solid #426AA7;
-			background: #426AA7;
+			color: $buttonText;
+			border: 1px solid $buttonColorHover;
+			background: $buttonColorHover;
 		}
+	}
+	&.btn-block{
+		display: block;
+		width: 100%; 
+	}	
+	&.btn-small{
+		text-transform: none;
+		font-size: 14px;
+		height: 22px;
+		line-height: 22px; 
+	}
+	input{
+	    width: 100%;
+	    height: 100%;
+	    position: absolute;
+	    left: 0;
+	    top: 0;
+	    border: 0;
+	    background: url("../images/spacer.gif");
+	    cursor: pointer;
 	}
 }
 button{
-	@extend .button;
+	//@extend .button;
+}
+
+.button-group{
+	@extend %clear;
+
+	&>.button {
+	    position: relative;
+	    float: left;
+	    width: 33.33%;
+	}
+	&>.button:not(:first-child):not(:last-child){
+	    border-radius: 0;
+	}
+	&>.button:last-child:not(:first-child) {
+	    border-top-left-radius: 0;
+	    border-bottom-left-radius: 0;
+	    border-left: 0;
+	}
+	&>.button:first-child:not(:last-child) {
+	    border-top-right-radius: 0;
+	    border-bottom-right-radius: 0;
+	}
 }
